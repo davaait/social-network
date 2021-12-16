@@ -1,10 +1,10 @@
 import React from "react";
 import './App.css';
-import {Header} from "./components/Header/Header.jsx";
-import {Navbar} from "./components/Navbar/Navbar.jsx";
-import {Profile} from "./components/Profile/Profile.jsx";
 import {Route, Routes} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/Dialogs-container";
+import {Header} from "./components/Header/Header";
+import {Navbar} from "./components/Navbar/Navbar";
+import {Profile} from "./components/Profile/Profile";
 
 export const App = () => {
     return (

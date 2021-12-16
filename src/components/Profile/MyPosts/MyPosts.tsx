@@ -1,10 +1,18 @@
 import React, {useRef} from "react";
 import s from './MyPosts.module.css';
-import Post from "./Post/Post";
+import {Post} from "./Post/Post";
 
-export const MyPosts = (props) => {
+/*export type MyPostsPropsType = {
+    id: number
+    message: string
+    likesCount: number
+    posts: Array<MyPostsPropsType>
+    newPostText: string
+}*/
+
+export const MyPosts = (props: any) => {
     let postsElements = props.posts
-        .map(p => <Post message={p.message} key={p.id} likesCount={p.likesCount}/>);
+        .map((p: { message: string; id: number; likesCount: number; }) => <Post message={p.message} key={p.id} likesCount={p.likesCount}/>);
 
     let inputRef = useRef(null);
 
@@ -13,6 +21,7 @@ export const MyPosts = (props) => {
     }
 
     let onPostChange = () => {
+        // @ts-ignore
         let inputValue = inputRef.current.value;
         props.updateNewPostText(inputValue);
     }

@@ -1,18 +1,18 @@
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
-import Dialogs from "./Dialogs";
+import {Dialogs} from "./Dialogs";
 import {connect} from "react-redux";
 
 let mapStateToProps =
-    (state) => {
+    (state: any) => {
         return {
             dialogsPage: state.dialogsPage
         }
     }
 
 let mapDispatchToProps =
-    (dispatch) => {
+    (dispatch: any) => {
         return {
-            updateNewMessageBody: (body) => {
+            updateNewMessageBody: (body: any) => {
                 dispatch(updateNewMessageBodyCreator(body))
             },
             sendMessage: () => {
