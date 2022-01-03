@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import DialogsContainer from "./components/Dialogs/Dialogs-container";
+import {DialogsContainer} from "./components/Dialogs/Dialogs-container";
 import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
@@ -18,6 +18,6 @@ export const App = () => {
                     {/*<Route path='/users/*' element={() => {<div>users</div>}}/>;*/}
                 </Routes>
             </div>
-        </div>
+        </div>  
     );
 }

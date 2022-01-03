@@ -2,6 +2,56 @@ import {profileReducer} from "./profile-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
 import {dialogsReducer} from "./dialogs-reducer";
 
+export type postsType = {
+    id: number
+    message: string
+    likesCount: number
+}
+
+export type profilePageType = {
+    newPostText: string
+    posts: Array<postsType>
+}
+
+export type dialogsType = {
+    id: number
+    name: string
+}
+
+export type messagesType = {
+    id: number
+    message: string
+}
+
+export type dialogsPageType = {
+    dialogs: Array<dialogsType>
+    messages: Array<messagesType>
+    newMessageBody: string
+}
+
+export type friendsType = {
+    id: number
+    name: string
+}
+
+export type sidebarType = {
+    friends: Array<friendsType>
+}
+
+export type stateType = {
+    profilePage: profilePageType
+    dialogsPage: dialogsPageType
+    sidebar: sidebarType
+    _callSubscriber: () => void
+    getState: () => stateType
+    subscribe: (observer: any) => void
+    dispatch: (action: any) => void
+}
+
+export type storeType = {
+    _state: stateType
+}
+
 export let store = {
     _state: {
         profilePage: {
